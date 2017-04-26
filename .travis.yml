@@ -1,0 +1,13 @@
+language: go
+go:
+- '1.8.1'
+install:
+  - go get -u github.com/golang/dep/...
+  - $GOPATH/bin/dep ensure
+deploy:
+  provider: releases
+  api_key:
+    secure: HRswMlicacCpRB5D7sXXR3NdhcT/OMJd3Mil9wjb03Np+KD2ySDFfeM2Yr/1nkjW3pRDvi+VOUUsEsZeIK/aYXi+Lw0wdtqMU3UJN1niNyuBmv9AXivc01Mp3p9CZ0JA5mfcQgsmYSqqzvK0mMVg48Zfpn4cmTxSL3SFLf1tqw+rc+1hKY/w6y0e529TtBwmCaS5DuZxJXkJut+wZjvZaS0iSmCaIAcKYWKKs3fOs73fN/zOVnXJYVrvLR6hb1Ct4dJrACkaKMDwGBSwnvTcXaQnjckmBWCaVC0n1zh1+xqPxvFLSGHrlbWEZn06PT9wepiBABBbqTHipAynWgOdzlO5TlpFh0L0KzTeOD9gDLktb35c9f2uRAyxOWuBkp+Frd1oXWdnvQ7PWhmqnl6P1hRY0XStCNnsAKCOcy9SmebypNA2PM7Loj+n8IYDfmuFU5xa0soCt/7LhXCIXdtfH32r+0yf+LoiLBrBcVOI7shSmLppEKgGlaX3oEqrljfr7amuCZwhk0LLVM9ILJnmjqisDpOoYNywesq8LW2FSq804BkuWdJPt80XFZcmNLb9zQVSyf1UH2f60Zln9Zp3SqnHwW9b4rp4kITGGiXzsCo8m8eYyvXdmqNpCE8sTNImIrvwOpYdLqTupU/bpVnK86RhKQzBMMt5oZaXHcQJilc=
+  file: $GOPATH/src/github.com/QuentinDeSoete/go_graphite_proxy
+  on:
+    tags: true
